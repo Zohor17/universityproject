@@ -5,6 +5,7 @@
 .catalog-filters,
 .catalog-recommendation,
 .wishlist-panel,
+.api-state,
 .loan-rules,
 .related-books,
 .book-meta-section,
@@ -137,7 +138,7 @@ button:focus-visible {
 
 .book-card {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
   align-content: start;
   gap: var(--space-3);
   min-inline-size: 0;
@@ -173,6 +174,17 @@ button:focus-visible {
   aspect-ratio: var(--cover-ratio);
   border-radius: var(--radius-small);
   object-fit: cover;
+}
+
+.book-card__cover-placeholder {
+  display: grid;
+  inline-size: 100%;
+  aspect-ratio: var(--cover-ratio);
+  place-items: center;
+  border-radius: var(--radius-small);
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  text-align: center;
 }
 
 .book-card__summary,
@@ -216,6 +228,35 @@ button:focus-visible {
 .results-count,
 .catalog-empty {
   grid-column: 1 / -1;
+}
+
+.api-state {
+  grid-column: 1 / -1;
+}
+
+.api-state--loading {
+  color: var(--color-text-muted);
+}
+
+.api-state--error {
+  border-color: var(--color-danger);
+  background: var(--color-danger-surface);
+  color: var(--color-danger);
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.pagination__status {
+  min-inline-size: var(--sidebar-width);
+  color: var(--color-text-muted);
+  text-align: center;
 }
 
 .results-count {
@@ -277,6 +318,11 @@ button:focus-visible {
   display: grid;
   grid-template-columns: var(--meta-grid-columns);
   gap: var(--space-2) var(--space-4);
+}
+
+.book-detail[hidden],
+.pagination[hidden] {
+  display: none;
 }
 
 .book-meta__term {
