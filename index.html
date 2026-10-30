@@ -3,34 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
   <title>Каталог книг — BookNest</title>
 </head>
 <body>
-  <header>
-    <p><a href="index.html">BookNest</a></p>
-    <nav aria-label="Основная навигация">
-      <ul>
-        <li><a href="index.html" aria-current="page">Каталог</a></li>
-        <li><a href="book.html">Книга недели</a></li>
-        <li><a href="loan.html">Оформить выдачу</a></li>
+  <header class="site-header">
+    <p class="site-header__brand"><a href="index.html">BookNest</a></p>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html" aria-current="page">Каталог</a></li>
+        <li><a class="site-nav__link" href="book.html">Книга недели</a></li>
+        <li><a class="site-nav__link" href="loan.html">Оформить выдачу</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <h1>Каталог книг</h1>
-    <p>Выберите следующую историю для уютного вечера.</p>
+  <main class="site-main catalog-page">
+    <h1 class="page-title">Каталог книг</h1>
+    <p class="page-intro">Выберите следующую историю для уютного вечера.</p>
 
-    <section aria-labelledby="filters-heading">
-      <h2 id="filters-heading">Найти книгу</h2>
-      <form action="index.html" method="get">
-        <p>
-          <label for="search">Название, автор или ключевое слово</label>
-          <input id="search" name="q" type="search" maxlength="80">
+    <section class="catalog-filters" aria-labelledby="filters-heading">
+      <h2 class="section-heading" id="filters-heading">Найти книгу</h2>
+      <form class="filters-form" action="index.html" method="get">
+        <p class="form-field">
+          <label class="field-label" for="search">Название, автор или ключевое слово</label>
+          <input class="form-control" id="search" name="q" type="search" maxlength="80">
         </p>
-        <p>
-          <label for="genre">Жанр</label>
-          <select id="genre" name="genre">
+        <p class="form-field">
+          <label class="field-label" for="genre">Жанр</label>
+          <select class="form-control" id="genre" name="genre">
             <option value="all">Все жанры</option>
             <option value="fiction">Художественная литература</option>
             <option value="detective">Детектив</option>
@@ -38,122 +42,122 @@
             <option value="history">История</option>
           </select>
         </p>
-        <p>
-          <label for="sort">Сортировка</label>
-          <select id="sort" name="sort">
+        <p class="form-field">
+          <label class="field-label" for="sort">Сортировка</label>
+          <select class="form-control" id="sort" name="sort">
             <option value="popular">Сначала популярные</option>
             <option value="title">По названию</option>
             <option value="recent">Сначала новые</option>
           </select>
         </p>
-        <p>
-          <input id="available" name="available" type="checkbox" value="yes">
-          <label for="available">Только доступные</label>
+        <p class="form-field form-field--inline">
+          <input class="checkbox-input" id="available" name="available" type="checkbox" value="yes">
+          <label class="field-label" for="available">Только доступные</label>
         </p>
         <button type="submit">Показать книги</button>
       </form>
     </section>
 
-    <section aria-labelledby="books-heading">
-      <h2 id="books-heading">Книги в каталоге</h2>
-      <article>
-        <header>
-          <h3><a href="book.html">Тихий сад</a></h3>
-          <p>Анна Лесная · Художественная проза</p>
+    <section class="book-listing" aria-labelledby="books-heading">
+      <h2 class="section-heading" id="books-heading">Книги в каталоге</h2>
+      <article class="book-card">
+        <header class="book-card__header">
+          <h3 class="book-card__title"><a href="book.html">Тихий сад</a></h3>
+          <p class="book-card__meta">Анна Лесная · Художественная проза</p>
         </header>
-        <figure>
-          <img src="assets/covers/quiet-garden.svg" width="320" height="480" alt="Зелёная обложка романа «Тихий сад» Анны Лесной">
-          <figcaption>Роман о доме, который помогает начать заново.</figcaption>
+        <figure class="book-card__figure">
+          <img class="book-card__cover" src="assets/covers/quiet-garden.svg" width="320" height="480" alt="Зелёная обложка романа «Тихий сад» Анны Лесной">
+          <figcaption class="book-card__caption">Роман о доме, который помогает начать заново.</figcaption>
         </figure>
-        <p>Тёплая история о семье, памяти и саде на окраине старого города.</p>
-        <p>Доступна для выдачи. Возврат — <time datetime="2026-11-15">15 ноября 2026 года</time>.</p>
-        <p><a href="loan.html">Оформить выдачу книги «Тихий сад»</a></p>
+        <p class="book-card__summary">Тёплая история о семье, памяти и саде на окраине старого города.</p>
+        <p class="book-card__status">Доступна для выдачи. Возврат — <time datetime="2026-11-15">15 ноября 2026 года</time>.</p>
+        <p class="book-card__action"><a class="button-link" href="loan.html">Оформить выдачу книги «Тихий сад»</a></p>
       </article>
 
-      <article>
-        <header>
-          <h3><a href="book.html">Последний поезд</a></h3>
-          <p>Михаил Воронов · Детектив</p>
+      <article class="book-card">
+        <header class="book-card__header">
+          <h3 class="book-card__title"><a href="book.html">Последний поезд</a></h3>
+          <p class="book-card__meta">Михаил Воронов · Детектив</p>
         </header>
-        <figure>
-          <img src="assets/covers/last-train.svg" width="320" height="480" alt="Ночная обложка детектива «Последний поезд» Михаила Воронова">
-          <figcaption>Детектив о загадке ночного экспресса.</figcaption>
+        <figure class="book-card__figure">
+          <img class="book-card__cover" src="assets/covers/last-train.svg" width="320" height="480" alt="Ночная обложка детектива «Последний поезд» Михаила Воронова">
+          <figcaption class="book-card__caption">Детектив о загадке ночного экспресса.</figcaption>
         </figure>
-        <p>Пассажиры одного вагона скрывают больше, чем готовы рассказать.</p>
-        <p>Сейчас выдана. Следующая дата возврата — <time datetime="2026-11-18">18 ноября 2026 года</time>.</p>
-        <p><a href="book.html">Подробнее о книге</a></p>
+        <p class="book-card__summary">Пассажиры одного вагона скрывают больше, чем готовы рассказать.</p>
+        <p class="book-card__status">Сейчас выдана. Следующая дата возврата — <time datetime="2026-11-18">18 ноября 2026 года</time>.</p>
+        <p class="book-card__action"><a class="button-link" href="book.html">Подробнее о книге</a></p>
       </article>
 
-      <article>
-        <header>
-          <h3><a href="book.html">Атлас звёзд</a></h3>
-          <p>Ирина Соловьёва · Научно-популярная литература</p>
+      <article class="book-card">
+        <header class="book-card__header">
+          <h3 class="book-card__title"><a href="book.html">Атлас звёзд</a></h3>
+          <p class="book-card__meta">Ирина Соловьёва · Научно-популярная литература</p>
         </header>
-        <figure>
-          <img src="assets/covers/atlas-stars.svg" width="320" height="480" alt="Фиолетовая обложка книги «Атлас звёзд» Ирины Соловьёвой">
-          <figcaption>Путеводитель по наблюдению за ночным небом.</figcaption>
+        <figure class="book-card__figure">
+          <img class="book-card__cover" src="assets/covers/atlas-stars.svg" width="320" height="480" alt="Фиолетовая обложка книги «Атлас звёзд» Ирины Соловьёвой">
+          <figcaption class="book-card__caption">Путеводитель по наблюдению за ночным небом.</figcaption>
         </figure>
-        <p>Понятное знакомство с созвездиями, планетами и устройством Вселенной.</p>
-        <p>Доступна для выдачи до <time datetime="2026-12-01">1 декабря 2026 года</time>.</p>
-        <p><a href="loan.html">Оформить выдачу книги «Атлас звёзд»</a></p>
+        <p class="book-card__summary">Понятное знакомство с созвездиями, планетами и устройством Вселенной.</p>
+        <p class="book-card__status">Доступна для выдачи до <time datetime="2026-12-01">1 декабря 2026 года</time>.</p>
+        <p class="book-card__action"><a class="button-link" href="loan.html">Оформить выдачу книги «Атлас звёзд»</a></p>
       </article>
 
-      <article>
-        <header>
-          <h3><a href="book.html">Город у реки</a></h3>
-          <p>Елена Мирова · Исторический роман</p>
+      <article class="book-card">
+        <header class="book-card__header">
+          <h3 class="book-card__title"><a href="book.html">Город у реки</a></h3>
+          <p class="book-card__meta">Елена Мирова · Исторический роман</p>
         </header>
-        <figure>
-          <img src="assets/covers/city-river.svg" width="320" height="480" alt="Синяя обложка книги «Город у реки» с домами на берегу">
-          <figcaption>История нескольких поколений на берегу Волги.</figcaption>
+        <figure class="book-card__figure">
+          <img class="book-card__cover" src="assets/covers/city-river.svg" width="320" height="480" alt="Синяя обложка книги «Город у реки» с домами на берегу">
+          <figcaption class="book-card__caption">История нескольких поколений на берегу Волги.</figcaption>
         </figure>
-        <p>Семейная хроника о переменах в провинциальном городе.</p>
-        <p>Доступна для выдачи до <time datetime="2026-11-22">22 ноября 2026 года</time>.</p>
-        <p><a href="loan.html">Оформить выдачу книги «Город у реки»</a></p>
+        <p class="book-card__summary">Семейная хроника о переменах в провинциальном городе.</p>
+        <p class="book-card__status">Доступна для выдачи до <time datetime="2026-11-22">22 ноября 2026 года</time>.</p>
+        <p class="book-card__action"><a class="button-link" href="loan.html">Оформить выдачу книги «Город у реки»</a></p>
       </article>
 
-      <article>
-        <header>
-          <h3><a href="book.html">Сад на крыше</a></h3>
-          <p>Мария Цветкова · Современная проза</p>
+      <article class="book-card">
+        <header class="book-card__header">
+          <h3 class="book-card__title"><a href="book.html">Сад на крыше</a></h3>
+          <p class="book-card__meta">Мария Цветкова · Современная проза</p>
         </header>
-        <figure>
-          <img src="assets/covers/roof-garden.svg" width="320" height="480" alt="Жёлтая обложка романа «Сад на крыше» с цветочными горшками на крыше">
-          <figcaption>Небольшой сад меняет жизнь соседей большого дома.</figcaption>
+        <figure class="book-card__figure">
+          <img class="book-card__cover" src="assets/covers/roof-garden.svg" width="320" height="480" alt="Жёлтая обложка романа «Сад на крыше» с цветочными горшками на крыше">
+          <figcaption class="book-card__caption">Небольшой сад меняет жизнь соседей большого дома.</figcaption>
         </figure>
-        <p>Лёгкий роман о дружбе, городских привычках и зелёном уголке.</p>
-        <p>Сейчас выдана. Ожидаемое возвращение — <time datetime="2026-11-20">20 ноября 2026 года</time>.</p>
-        <p><a href="book.html">Подробнее о книге</a></p>
+        <p class="book-card__summary">Лёгкий роман о дружбе, городских привычках и зелёном уголке.</p>
+        <p class="book-card__status">Сейчас выдана. Ожидаемое возвращение — <time datetime="2026-11-20">20 ноября 2026 года</time>.</p>
+        <p class="book-card__action"><a class="button-link" href="book.html">Подробнее о книге</a></p>
       </article>
 
-      <article>
-        <header>
-          <h3><a href="book.html">Письма с маяка</a></h3>
-          <p>Олег Береговой · Приключения</p>
+      <article class="book-card">
+        <header class="book-card__header">
+          <h3 class="book-card__title"><a href="book.html">Письма с маяка</a></h3>
+          <p class="book-card__meta">Олег Береговой · Приключения</p>
         </header>
-        <figure>
-          <img src="assets/covers/lighthouse-letters.svg" width="320" height="480" alt="Бирюзовая обложка книги «Письма с маяка» с маяком на берегу">
-          <figcaption>Приключение начинается с письма без обратного адреса.</figcaption>
+        <figure class="book-card__figure">
+          <img class="book-card__cover" src="assets/covers/lighthouse-letters.svg" width="320" height="480" alt="Бирюзовая обложка книги «Письма с маяка» с маяком на берегу">
+          <figcaption class="book-card__caption">Приключение начинается с письма без обратного адреса.</figcaption>
         </figure>
-        <p>Юная картограф отправляется на остров искать автора старых писем.</p>
-        <p>Доступна для выдачи до <time datetime="2026-11-30">30 ноября 2026 года</time>.</p>
-        <p><a href="loan.html">Оформить выдачу книги «Письма с маяка»</a></p>
+        <p class="book-card__summary">Юная картограф отправляется на остров искать автора старых писем.</p>
+        <p class="book-card__status">Доступна для выдачи до <time datetime="2026-11-30">30 ноября 2026 года</time>.</p>
+        <p class="book-card__action"><a class="button-link" href="loan.html">Оформить выдачу книги «Письма с маяка»</a></p>
       </article>
     </section>
 
-    <aside aria-labelledby="recommendation-heading">
-      <h2 id="recommendation-heading">Выбор библиотекаря</h2>
+    <aside class="catalog-recommendation" aria-labelledby="recommendation-heading">
+      <h2 class="section-heading" id="recommendation-heading">Выбор библиотекаря</h2>
       <p>Начните с <a href="book.html">книги «Тихий сад»</a>, если хочется спокойного и доброго чтения.</p>
     </aside>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>BookNest — библиотека историй для каждого дня.</p>
-    <nav aria-label="Навигация в подвале">
-      <ul>
-        <li><a href="index.html">Каталог</a></li>
-        <li><a href="book.html">Книга недели</a></li>
-        <li><a href="loan.html">Форма выдачи</a></li>
+    <nav class="site-nav" aria-label="Навигация в подвале">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Каталог</a></li>
+        <li><a class="site-nav__link" href="book.html">Книга недели</a></li>
+        <li><a class="site-nav__link" href="loan.html">Форма выдачи</a></li>
       </ul>
     </nav>
   </footer>

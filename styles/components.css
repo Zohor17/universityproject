@@ -1,0 +1,232 @@
+.section-heading {
+  font-size: var(--font-size-section);
+}
+
+.catalog-filters,
+.catalog-recommendation,
+.loan-rules,
+.related-books,
+.book-meta-section,
+.review-form-section {
+  padding: var(--space-5);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+}
+
+.filters-form,
+.form-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.form-field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-field--inline {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  justify-content: start;
+}
+
+.field-label {
+  font-weight: var(--font-weight-medium);
+}
+
+.form-control {
+  inline-size: 100%;
+  min-block-size: var(--control-min-block-size);
+  padding: var(--space-2) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-small);
+  background: var(--color-page);
+}
+
+textarea.form-control {
+  min-block-size: var(--textarea-min-block-size);
+  resize: vertical;
+}
+
+.form-control:invalid {
+  border-color: var(--color-danger);
+  background: var(--color-danger-surface);
+}
+
+.form-control:disabled,
+.checkbox-input:disabled,
+button:disabled {
+  background: var(--color-disabled-surface);
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
+
+.checkbox-input {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  accent-color: var(--color-accent);
+}
+
+.form-help,
+.book-card__meta,
+.book-card__caption,
+.book-detail__caption,
+.review-card time {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.form-group {
+  display: grid;
+  gap: var(--space-4);
+  min-inline-size: 0;
+  padding: var(--space-5);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+}
+
+.form-group__legend {
+  padding-inline: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+}
+
+button,
+.button-link {
+  display: inline-flex;
+  min-block-size: var(--control-min-block-size);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-accent);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  border-color: var(--color-border);
+}
+
+.button-link:focus-visible,
+button:focus-visible {
+  outline-color: var(--color-focus);
+}
+
+.book-card {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+  align-content: start;
+  gap: var(--space-3);
+  min-inline-size: 0;
+  block-size: 100%;
+  padding: var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.book-card__header {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.book-card__title {
+  font-size: var(--font-size-large);
+}
+
+.book-card__title a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.book-card__figure {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.book-card__cover {
+  inline-size: 100%;
+  aspect-ratio: var(--cover-ratio);
+  border-radius: var(--radius-small);
+  object-fit: cover;
+}
+
+.book-card__summary,
+.book-card__status,
+.book-card__action {
+  overflow-wrap: anywhere;
+}
+
+.book-card__status {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.book-card__action {
+  align-self: end;
+}
+
+.book-card__action .button-link {
+  inline-size: 100%;
+}
+
+.book-meta {
+  display: grid;
+  grid-template-columns: var(--meta-grid-columns);
+  gap: var(--space-2) var(--space-4);
+}
+
+.book-meta__term {
+  color: var(--color-text-muted);
+}
+
+.book-meta__value {
+  font-weight: var(--font-weight-medium);
+  overflow-wrap: anywhere;
+}
+
+.review-card {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-inline-start: var(--accent-rule-width) solid var(--color-accent);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-muted);
+}
+
+.review-card__title {
+  font-size: var(--font-size-large);
+}
+
+.related-books ul {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.site-footer > p {
+  color: var(--color-text-muted);
+}
+
+.site-nav__link:hover {
+  background: var(--color-surface-muted);
+}
+
+button:hover:not(:disabled),
+.button-link:hover {
+  border-color: var(--color-accent-hover);
+  background: var(--color-accent-hover);
+  color: var(--color-accent-text);
+}
+
+/* No nonessential motion, transition, or scroll animation is defined; prefers-reduced-motion users get static states by default. */

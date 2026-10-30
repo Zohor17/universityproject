@@ -3,104 +3,108 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
   <title>Тихий сад — карточка книги — BookNest</title>
 </head>
 <body>
-  <header>
-    <p><a href="index.html">BookNest</a></p>
-    <nav aria-label="Основная навигация">
-      <ul>
-        <li><a href="index.html">Каталог</a></li>
-        <li><a href="book.html" aria-current="page">Книга недели</a></li>
-        <li><a href="loan.html">Оформить выдачу</a></li>
+  <header class="site-header">
+    <p class="site-header__brand"><a href="index.html">BookNest</a></p>
+    <nav class="site-nav" aria-label="Основная навигация">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Каталог</a></li>
+        <li><a class="site-nav__link" href="book.html" aria-current="page">Книга недели</a></li>
+        <li><a class="site-nav__link" href="loan.html">Оформить выдачу</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <nav aria-label="Хлебные крошки">
-      <ol>
-        <li><a href="index.html">Каталог</a></li>
-        <li aria-current="page">Тихий сад</li>
+  <main class="site-main page-stack">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a href="index.html">Каталог</a></li>
+        <li class="breadcrumbs__item" aria-current="page">Тихий сад</li>
       </ol>
     </nav>
 
-    <article>
-      <header>
-        <h1>Тихий сад</h1>
-        <p>Роман Анны Лесной</p>
+    <article class="book-detail">
+      <header class="book-detail__header">
+        <h1 class="page-title">Тихий сад</h1>
+        <p class="page-intro">Роман Анны Лесной</p>
       </header>
 
-      <figure>
-        <img src="assets/covers/quiet-garden.svg" width="320" height="480" alt="Зелёная обложка с раскидистым деревом и названием романа «Тихий сад»">
-        <figcaption>Первое издание, 2023 год.</figcaption>
+      <figure class="book-detail__figure">
+        <img class="book-detail__cover" src="assets/covers/quiet-garden.svg" width="320" height="480" alt="Зелёная обложка с раскидистым деревом и названием романа «Тихий сад»">
+        <figcaption class="book-detail__caption">Первое издание, 2023 год.</figcaption>
       </figure>
 
-      <section aria-labelledby="details-heading">
-        <h2 id="details-heading">Характеристики</h2>
-        <dl>
-          <dt>Автор</dt>
-          <dd>Анна Лесная</dd>
-          <dt>Жанр</dt>
-          <dd>Современная художественная проза</dd>
-          <dt>Издательство</dt>
-          <dd>Северная книга</dd>
-          <dt>Год издания</dt>
-          <dd>2023</dd>
-          <dt>Объём</dt>
-          <dd>304 страницы</dd>
-          <dt>Статус</dt>
-          <dd>Доступна для выдачи</dd>
+      <section class="book-meta-section" aria-labelledby="details-heading">
+        <h2 class="section-heading" id="details-heading">Характеристики</h2>
+        <dl class="book-meta">
+          <dt class="book-meta__term">Автор</dt>
+          <dd class="book-meta__value">Анна Лесная</dd>
+          <dt class="book-meta__term">Жанр</dt>
+          <dd class="book-meta__value">Современная художественная проза</dd>
+          <dt class="book-meta__term">Издательство</dt>
+          <dd class="book-meta__value">Северная книга</dd>
+          <dt class="book-meta__term">Год издания</dt>
+          <dd class="book-meta__value">2023</dd>
+          <dt class="book-meta__term">Объём</dt>
+          <dd class="book-meta__value">304 страницы</dd>
+          <dt class="book-meta__term">Статус</dt>
+          <dd class="book-meta__value">Доступна для выдачи</dd>
         </dl>
       </section>
 
-      <section aria-labelledby="description-heading">
-        <h2 id="description-heading">О книге</h2>
+      <section class="book-description" aria-labelledby="description-heading">
+        <h2 class="section-heading" id="description-heading">О книге</h2>
         <p>После долгого отсутствия Лида возвращается в дом бабушки и обнаруживает за ним заросший сад. Разбирая письма и восстанавливая старые дорожки, она узнаёт историю семьи и находит собственный путь домой.</p>
         <p>Неспешный роман о памяти, заботе и том, как перемены начинаются с малого.</p>
-        <p><a href="loan.html">Оформить выдачу книги</a></p>
+        <p><a class="button-link" href="loan.html">Оформить выдачу книги</a></p>
       </section>
     </article>
 
-    <section aria-labelledby="reviews-heading">
-      <h2 id="reviews-heading">Отзывы читателей</h2>
-      <article>
-        <h3>Очень уютная история</h3>
+    <section class="review-list" aria-labelledby="reviews-heading">
+      <h2 class="section-heading" id="reviews-heading">Отзывы читателей</h2>
+      <article class="review-card">
+        <h3 class="review-card__title">Очень уютная история</h3>
         <p>Понравилось, как героиня постепенно разбирается и в саде, и в семейных воспоминаниях.</p>
         <p>Отзыв оставила Марина <time datetime="2026-10-12">12 октября 2026 года</time>.</p>
       </article>
-      <article>
-        <h3>Читается легко</h3>
+      <article class="review-card">
+        <h3 class="review-card__title">Читается легко</h3>
         <p>Хорошая книга для выходного дня. После неё хочется посадить что-нибудь у дома.</p>
         <p>Отзыв оставил Павел <time datetime="2026-10-18">18 октября 2026 года</time>.</p>
       </article>
     </section>
 
-    <section aria-labelledby="new-review-heading">
-      <h2 id="new-review-heading">Оставить отзыв</h2>
-      <form action="book.html" method="post">
-        <p>
-          <label for="review-name">Ваше имя</label>
-          <input id="review-name" name="name" type="text" required minlength="2" maxlength="60" autocomplete="name">
+    <section class="review-form-section" aria-labelledby="new-review-heading">
+      <h2 class="section-heading" id="new-review-heading">Оставить отзыв</h2>
+      <form class="form-stack" action="book.html" method="post">
+        <p class="form-field">
+          <label class="field-label" for="review-name">Ваше имя</label>
+          <input class="form-control" id="review-name" name="name" type="text" required minlength="2" maxlength="60" autocomplete="name">
         </p>
-        <p>
-          <label for="review-email">Электронная почта</label>
-          <input id="review-email" name="email" type="email" required maxlength="254" autocomplete="email">
+        <p class="form-field">
+          <label class="field-label" for="review-email">Электронная почта</label>
+          <input class="form-control" id="review-email" name="email" type="email" required maxlength="254" autocomplete="email">
         </p>
-        <p>
-          <label for="review-rating">Оценка от 1 до 5</label>
-          <input id="review-rating" name="rating" type="number" min="1" max="5" required>
+        <p class="form-field">
+          <label class="field-label" for="review-rating">Оценка от 1 до 5</label>
+          <input class="form-control" id="review-rating" name="rating" type="number" min="1" max="5" required>
         </p>
-        <p>
-          <label for="review-text">Текст отзыва</label>
-          <textarea id="review-text" name="review" rows="5" minlength="10" maxlength="1000" required></textarea>
+        <p class="form-field">
+          <label class="field-label" for="review-text">Текст отзыва</label>
+          <textarea class="form-control" id="review-text" name="review" rows="5" minlength="10" maxlength="1000" required></textarea>
         </p>
         <button type="submit">Отправить отзыв</button>
       </form>
     </section>
 
-    <aside aria-labelledby="related-heading">
-      <h2 id="related-heading">Похожие книги</h2>
+    <aside class="related-books" aria-labelledby="related-heading">
+      <h2 class="section-heading" id="related-heading">Похожие книги</h2>
       <ul>
         <li><a href="index.html">Город у реки — семейная история о переменах</a></li>
         <li><a href="index.html">Сад на крыше — роман о соседях и дружбе</a></li>
@@ -109,13 +113,13 @@
     </aside>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>BookNest — библиотека историй для каждого дня.</p>
-    <nav aria-label="Навигация в подвале">
-      <ul>
-        <li><a href="index.html">Каталог</a></li>
-        <li><a href="book.html">Книга недели</a></li>
-        <li><a href="loan.html">Форма выдачи</a></li>
+    <nav class="site-nav" aria-label="Навигация в подвале">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Каталог</a></li>
+        <li><a class="site-nav__link" href="book.html">Книга недели</a></li>
+        <li><a class="site-nav__link" href="loan.html">Форма выдачи</a></li>
       </ul>
     </nav>
   </footer>
