@@ -1,6 +1,6 @@
-# BookNest — лабораторная работа 5
+# BookNest — лабораторная работа 6A
 
-Каталог книг перенесён на React, Vite и TypeScript. Компоненты находятся в `src/components/`, сетевые запросы — в `src/api/`, состояние запросов и списка желаемого — в `src/lib/`.
+Клиентская часть построена на React + TypeScript. Код разделён на `app/`, `pages/`, `features/`, `shared/` и `api/` внутри `src/`.
 
 ## Запуск
 
@@ -16,4 +16,4 @@ npm run build
 npm run lint
 ```
 
-Стили из `styles/` переиспользуются с ЛР 2. Описание дерева компонентов и владельцев состояния: [docs/lab5/components.md](docs/lab5/components.md). Отчёт: [docs/lab5/lab5.md](docs/lab5/lab5.md).
+Отчёт ЛР 6A: [docs/lab6a/lab6a.md](docs/lab6a/lab6a.md).

@@ -1,4 +1,4 @@
-import type { BookSummary, SortOrder } from "../types";
+import type { BookSummary, SortOrder } from "../../../shared/types";
 
 export interface BookFilters {
   genre: string;

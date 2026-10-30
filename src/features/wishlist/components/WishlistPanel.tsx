@@ -1,7 +1,7 @@
-import type { BookSummary } from "../types";
-import { Badge } from "./Badge";
-import { Button } from "./Button";
-import { EmptyState } from "./EmptyState";
+import type { BookSummary } from "../../../shared/types";
+import { Badge } from "../../../shared/components/Badge";
+import { Button } from "../../../shared/components/Button";
+import { EmptyState } from "../../../shared/components/EmptyState";
 
 export interface WishlistPanelProps {
   books: BookSummary[];

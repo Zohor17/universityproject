@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { BookSummary } from "../types";
+import type { BookSummary } from "../../../shared/types";
 
 const STORAGE_KEY = "booknest.openlibrary.wishlist.v1";
 

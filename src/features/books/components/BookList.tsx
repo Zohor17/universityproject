@@ -1,4 +1,4 @@
-import type { BookSummary } from "../types";
+import type { BookSummary } from "../../../shared/types";
 import { BookCard } from "./BookCard";
 
 export interface BookListProps {

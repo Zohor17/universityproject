@@ -1,6 +1,6 @@
-import type { BookSummary } from "../types";
-import { Badge } from "./Badge";
-import { Button } from "./Button";
+import type { BookSummary } from "../../../shared/types";
+import { Badge } from "../../../shared/components/Badge";
+import { Button } from "../../../shared/components/Button";
 
 export interface BookCardProps {
   book: BookSummary;

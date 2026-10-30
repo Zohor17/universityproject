@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { Button } from "../../../shared/components/Button";
 
 export interface PaginationProps {
   page: number;
