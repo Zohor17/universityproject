@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ApiError } from "../../api/client";
 import type { ApiFailure, LoadStatus } from "../types";
 
 export type Fetcher<T> = (signal: AbortSignal) => Promise<T>;
@@ -11,14 +10,17 @@ export interface FetchState<T> {
 }
 
 function toFailure(error: unknown): ApiFailure {
-  if (error instanceof ApiError && error.status !== undefined) {
+  const apiError = error instanceof Error && "status" in error
+    ? error as Error & { status?: unknown }
+    : null;
+  if (apiError && typeof apiError.status === "number") {
     return {
-      message: error.message,
-      status: error.status,
-      kind: error.status >= 500 ? "server" : "client",
+      message: apiError.message,
+      status: apiError.status,
+      kind: apiError.status >= 500 ? "server" : "client",
     };
   }
-  if (error instanceof ApiError) return { message: error.message, kind: "network" };
+  if (apiError) return { message: apiError.message, kind: "network" };
   return { message: "Не удалось загрузить данные. Повторите попытку.", kind: "unknown" };
 }
 

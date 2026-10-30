@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type { BookSummary } from "../../../shared/types";
 import { Badge } from "../../../shared/components/Badge";
 import { Button } from "../../../shared/components/Button";
@@ -6,10 +7,9 @@ export interface BookCardProps {
   book: BookSummary;
   saved: boolean;
   onToggleWishlist: (book: BookSummary) => void;
-  onOpenDetails: (bookId: string) => void;
 }
 
-export function BookCard({ book, saved, onToggleWishlist, onOpenDetails }: BookCardProps) {
+export function BookCard({ book, saved, onToggleWishlist }: BookCardProps) {
   const cover = book.coverId === null
     ? <span className="book-card__cover-placeholder">Обложка не найдена</span>
     : <img
@@ -36,7 +36,7 @@ export function BookCard({ book, saved, onToggleWishlist, onOpenDetails }: BookC
         <Badge tone="accent">{book.hasFullText ? "Полный текст" : `${book.editionCount ?? "Нет данных"} изданий`}</Badge>
       </p>
       <div className="book-card__action">
-        <Button variant="secondary" onClick={() => onOpenDetails(book.id)}>Подробнее</Button>
+        <Link className="button-link" to={`/books/${book.id}`}>Подробнее</Link>
         <Button
           variant={saved ? "secondary" : "primary"}
           className="wishlist-toggle"
