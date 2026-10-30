@@ -1,6 +1,6 @@
 import type { ChangeEvent } from "react";
-import type { SortOrder } from "../types";
-import { Button } from "./Button";
+import type { SortOrder } from "../../../shared/types";
+import { Button } from "../../../shared/components/Button";
 
 export interface FiltersPanelProps {
   query: string;

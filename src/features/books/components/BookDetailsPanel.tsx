@@ -1,9 +1,8 @@
-import type { BookDetails } from "../types";
-import { Button } from "./Button";
-import { EmptyState } from "./EmptyState";
-import { ErrorBox } from "./ErrorBox";
-import { Spinner } from "./Spinner";
-import type { ApiFailure, LoadStatus } from "../types";
+import type { ApiFailure, BookDetails, LoadStatus } from "../../../shared/types";
+import { Button } from "../../../shared/components/Button";
+import { EmptyState } from "../../../shared/components/EmptyState";
+import { ErrorBox } from "../../../shared/components/ErrorBox";
+import { Spinner } from "../../../shared/components/Spinner";
 
 export interface BookDetailsPanelProps {
   status: LoadStatus;

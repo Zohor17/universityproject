@@ -1,5 +1,5 @@
 import { getJson } from "./client";
-import type { BookDetails, BookSummary, SearchResponse } from "../types";
+import type { BookDetails, BookSummary, SearchResponse } from "../shared/types";
 
 interface SearchDocument {
   key?: unknown;
