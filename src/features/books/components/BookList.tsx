@@ -5,10 +5,9 @@ export interface BookListProps {
   books: BookSummary[];
   savedIds: ReadonlySet<string>;
   onToggleWishlist: (book: BookSummary) => void;
-  onOpenDetails: (bookId: string) => void;
 }
 
-export function BookList({ books, savedIds, onToggleWishlist, onOpenDetails }: BookListProps) {
+export function BookList({ books, savedIds, onToggleWishlist }: BookListProps) {
   return (
     <div className="book-listing">
       {books.map((book) => (
@@ -17,7 +16,6 @@ export function BookList({ books, savedIds, onToggleWishlist, onOpenDetails }: B
           book={book}
           saved={savedIds.has(book.id)}
           onToggleWishlist={onToggleWishlist}
-          onOpenDetails={onOpenDetails}
         />
       ))}
     </div>

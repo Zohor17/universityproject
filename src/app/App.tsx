@@ -1,19 +1,28 @@
-import { useWishlist } from "../features/wishlist/hooks/useWishlist";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router";
+import { AppLayout } from "./AppLayout";
+import { RequireAuth } from "./components/RequireAuth";
+import { BookFormPage } from "../pages/BookFormPage";
+import { BookDetailsPage } from "../pages/BookDetailsPage";
 import { BooksPage } from "../pages/BooksPage";
+import { LoginPage } from "../pages/LoginPage";
+import { NotFoundPage } from "../pages/NotFoundPage";
 import { WishlistPage } from "../pages/WishlistPage";
-import { SiteHeader } from "../shared/components/SiteHeader";
 
 export default function App() {
-  const wishlist = useWishlist();
-
   return (
-    <div className="app-shell">
-      <SiteHeader savedCount={wishlist.books.length} />
-      <main className="site-main catalog-page">
-        <BooksPage wishlist={wishlist.books} onToggleWishlist={wishlist.toggle} />
-        <WishlistPage books={wishlist.books} onRemove={wishlist.remove} />
-      </main>
-      <footer className="site-footer"><p>BookNest · данные каталога предоставлены Open Library</p></footer>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<Navigate to="/books" replace />} />
+          <Route path="/books" element={<BooksPage />} />
+          <Route path="/books/new" element={<BookFormPage />} />
+          <Route path="/books/:bookId/edit" element={<BookFormPage />} />
+          <Route path="/books/:bookId" element={<BookDetailsPage />} />
+          <Route path="/wishlist" element={<RequireAuth><WishlistPage /></RequireAuth>} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
