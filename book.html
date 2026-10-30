@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тихий сад — карточка книги — BookNest</title>
+</head>
+<body>
+  <header>
+    <p><a href="index.html">BookNest</a></p>
+    <nav aria-label="Основная навигация">
+      <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="book.html" aria-current="page">Книга недели</a></li>
+        <li><a href="loan.html">Оформить выдачу</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <nav aria-label="Хлебные крошки">
+      <ol>
+        <li><a href="index.html">Каталог</a></li>
+        <li aria-current="page">Тихий сад</li>
+      </ol>
+    </nav>
+
+    <article>
+      <header>
+        <h1>Тихий сад</h1>
+        <p>Роман Анны Лесной</p>
+      </header>
+
+      <figure>
+        <img src="assets/covers/quiet-garden.svg" width="320" height="480" alt="Зелёная обложка с раскидистым деревом и названием романа «Тихий сад»">
+        <figcaption>Первое издание, 2023 год.</figcaption>
+      </figure>
+
+      <section aria-labelledby="details-heading">
+        <h2 id="details-heading">Характеристики</h2>
+        <dl>
+          <dt>Автор</dt>
+          <dd>Анна Лесная</dd>
+          <dt>Жанр</dt>
+          <dd>Современная художественная проза</dd>
+          <dt>Издательство</dt>
+          <dd>Северная книга</dd>
+          <dt>Год издания</dt>
+          <dd>2023</dd>
+          <dt>Объём</dt>
+          <dd>304 страницы</dd>
+          <dt>Статус</dt>
+          <dd>Доступна для выдачи</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="description-heading">
+        <h2 id="description-heading">О книге</h2>
+        <p>После долгого отсутствия Лида возвращается в дом бабушки и обнаруживает за ним заросший сад. Разбирая письма и восстанавливая старые дорожки, она узнаёт историю семьи и находит собственный путь домой.</p>
+        <p>Неспешный роман о памяти, заботе и том, как перемены начинаются с малого.</p>
+        <p><a href="loan.html">Оформить выдачу книги</a></p>
+      </section>
+    </article>
+
+    <section aria-labelledby="reviews-heading">
+      <h2 id="reviews-heading">Отзывы читателей</h2>
+      <article>
+        <h3>Очень уютная история</h3>
+        <p>Понравилось, как героиня постепенно разбирается и в саде, и в семейных воспоминаниях.</p>
+        <p>Отзыв оставила Марина <time datetime="2026-10-12">12 октября 2026 года</time>.</p>
+      </article>
+      <article>
+        <h3>Читается легко</h3>
+        <p>Хорошая книга для выходного дня. После неё хочется посадить что-нибудь у дома.</p>
+        <p>Отзыв оставил Павел <time datetime="2026-10-18">18 октября 2026 года</time>.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="new-review-heading">
+      <h2 id="new-review-heading">Оставить отзыв</h2>
+      <form action="book.html" method="post">
+        <p>
+          <label for="review-name">Ваше имя</label>
+          <input id="review-name" name="name" type="text" required minlength="2" maxlength="60" autocomplete="name">
+        </p>
+        <p>
+          <label for="review-email">Электронная почта</label>
+          <input id="review-email" name="email" type="email" required maxlength="254" autocomplete="email">
+        </p>
+        <p>
+          <label for="review-rating">Оценка от 1 до 5</label>
+          <input id="review-rating" name="rating" type="number" min="1" max="5" required>
+        </p>
+        <p>
+          <label for="review-text">Текст отзыва</label>
+          <textarea id="review-text" name="review" rows="5" minlength="10" maxlength="1000" required></textarea>
+        </p>
+        <button type="submit">Отправить отзыв</button>
+      </form>
+    </section>
+
+    <aside aria-labelledby="related-heading">
+      <h2 id="related-heading">Похожие книги</h2>
+      <ul>
+        <li><a href="index.html">Город у реки — семейная история о переменах</a></li>
+        <li><a href="index.html">Сад на крыше — роман о соседях и дружбе</a></li>
+        <li><a href="index.html">Письма с маяка — приключение о поиске дома</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>BookNest — библиотека историй для каждого дня.</p>
+    <nav aria-label="Навигация в подвале">
+      <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="book.html">Книга недели</a></li>
+        <li><a href="loan.html">Форма выдачи</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
