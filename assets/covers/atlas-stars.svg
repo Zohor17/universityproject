@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="480" viewBox="0 0 320 480" role="img" aria-labelledby="title desc">
+  <title id="title">Атлас звёзд — обложка книги</title>
+  <desc id="desc">Космическая фиолетовая обложка с планетами и звёздами</desc>
+  <rect width="320" height="480" fill="#28214c"/>
+  <circle cx="239" cy="190" r="63" fill="#dd9865"/>
+  <ellipse cx="239" cy="190" rx="99" ry="28" fill="none" stroke="#f0d6a1" stroke-width="8" transform="rotate(-18 239 190)"/>
+  <circle cx="74" cy="129" r="4" fill="#fff"/><circle cx="131" cy="224" r="5" fill="#fff"/><circle cx="83" cy="288" r="3" fill="#fff"/>
+  <circle cx="271" cy="90" r="3" fill="#fff"/>
+  <text x="160" y="365" fill="#fff" font-family="serif" font-size="34" text-anchor="middle">Атлас звёзд</text>
+  <text x="160" y="410" fill="#d9c8f1" font-family="sans-serif" font-size="14" text-anchor="middle">ИРИНА СОЛОВЬЁВА</text>
+</svg>

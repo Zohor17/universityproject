@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="480" viewBox="0 0 320 480" role="img" aria-labelledby="title desc">
+  <title id="title">Последний поезд — обложка книги</title>
+  <desc id="desc">Ночная синяя обложка с поездом и светящимися окнами</desc>
+  <rect width="320" height="480" fill="#152a45"/>
+  <circle cx="250" cy="80" r="34" fill="#f0d990"/>
+  <path d="M0 296 90 208l48 45 73-82 109 105v204H0z" fill="#263c59"/>
+  <rect x="25" y="305" width="270" height="105" rx="12" fill="#bf6c53"/>
+  <path d="M45 325h48v35H45zm68 0h48v35h-48zm68 0h48v35h-48z" fill="#f3d98e"/>
+  <circle cx="84" cy="420" r="19" fill="#101d30"/><circle cx="240" cy="420" r="19" fill="#101d30"/>
+  <text x="160" y="106" fill="#fff" font-family="serif" font-size="27" text-anchor="middle">Последний поезд</text>
+  <text x="160" y="460" fill="#fff" font-family="sans-serif" font-size="14" text-anchor="middle">МИХАИЛ ВОРОНОВ</text>
+</svg>
