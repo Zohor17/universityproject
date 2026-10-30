@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заявка на выдачу книги — BookNest</title>
+</head>
+<body>
+  <header>
+    <p><a href="index.html">BookNest</a></p>
+    <nav aria-label="Основная навигация">
+      <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="book.html">Книга недели</a></li>
+        <li><a href="loan.html" aria-current="page">Оформить выдачу</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Заявка на выдачу книги</h1>
+    <p>Заполните форму, чтобы зарезервировать книгу в библиотеке BookNest.</p>
+
+    <form action="loan.html" method="post">
+      <fieldset>
+        <legend>Читатель</legend>
+        <p>
+          <label for="reader-name">Имя и фамилия</label>
+          <input id="reader-name" name="reader-name" type="text" required minlength="2" maxlength="80" autocomplete="name">
+        </p>
+        <p>
+          <label for="reader-email">Электронная почта</label>
+          <input id="reader-email" name="reader-email" type="email" required maxlength="254" autocomplete="email">
+        </p>
+        <p>
+          <label for="reader-phone">Телефон</label>
+          <input id="reader-phone" name="reader-phone" type="tel" required pattern="\+?[0-9\s()-]{10,20}" maxlength="20" autocomplete="tel" aria-describedby="phone-hint">
+        </p>
+        <p id="phone-hint">Введите номер длиной от 10 до 20 символов: цифры, пробелы, скобки, дефисы и знак +.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Параметры выдачи</legend>
+        <p>
+          <label for="book-title">Книга</label>
+          <select id="book-title" name="book-title" required>
+            <option value="" selected disabled>Выберите книгу</option>
+            <option value="quiet-garden">Тихий сад — Анна Лесная</option>
+            <option value="atlas-stars">Атлас звёзд — Ирина Соловьёва</option>
+            <option value="city-river">Город у реки — Елена Мирова</option>
+            <option value="roof-garden">Сад на крыше — Мария Цветкова</option>
+            <option value="lighthouse-letters">Письма с маяка — Олег Береговой</option>
+          </select>
+        </p>
+        <p>
+          <label for="pickup-date">Желаемая дата получения</label>
+          <input id="pickup-date" name="pickup-date" type="date" required min="2026-10-30">
+        </p>
+        <p>
+          <label for="loan-days">Срок выдачи в днях (от 1 до 30)</label>
+          <input id="loan-days" name="loan-days" type="number" min="1" max="30" value="14" required>
+        </p>
+        <p>
+          <label for="reader-note">Пожелания к выдаче (необязательно)</label>
+          <textarea id="reader-note" name="reader-note" rows="4" maxlength="500"></textarea>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Подтверждение</legend>
+        <p>
+          <input id="rules-agree" name="rules-agree" type="checkbox" value="yes" required>
+          <label for="rules-agree">Я согласен соблюдать правила пользования библиотекой.</label>
+        </p>
+      </fieldset>
+      <button type="submit">Отправить заявку</button>
+    </form>
+
+    <aside aria-labelledby="loan-rules-heading">
+      <h2 id="loan-rules-heading">Правила выдачи</h2>
+      <p>Обычный срок выдачи — 14 дней. Продлить его можно, если на книгу нет очереди.</p>
+      <p>Библиотека подтвердит заявку по электронной почте в течение одного рабочего дня.</p>
+      <p>Сроки работы: понедельник—суббота, с <time datetime="09:00">09:00</time> до <time datetime="18:00">18:00</time>.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>BookNest — библиотека историй для каждого дня.</p>
+    <nav aria-label="Навигация в подвале">
+      <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="book.html">Книга недели</a></li>
+        <li><a href="loan.html">Форма выдачи</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
