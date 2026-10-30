@@ -17,11 +17,12 @@
         <li><a class="site-nav__link" href="index.html" aria-current="page">Каталог</a></li>
         <li><a class="site-nav__link" href="book.html">Книга недели</a></li>
         <li><a class="site-nav__link" href="loan.html">Оформить выдачу</a></li>
+        <li><a class="site-nav__link" href="#wishlist">Мой список <span class="wishlist-count" id="wishlist-count" aria-live="polite">0</span></a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="site-main catalog-page">
+  <main class="site-main catalog-page" id="catalog-app">
     <h1 class="page-title">Каталог книг</h1>
     <p class="page-intro">Выберите следующую историю для уютного вечера.</p>
 
@@ -40,14 +41,15 @@
             <option value="detective">Детектив</option>
             <option value="science">Научная литература</option>
             <option value="history">История</option>
+            <option value="adventure">Приключения</option>
           </select>
         </p>
         <p class="form-field">
           <label class="field-label" for="sort">Сортировка</label>
           <select class="form-control" id="sort" name="sort">
-            <option value="popular">Сначала популярные</option>
-            <option value="title">По названию</option>
-            <option value="recent">Сначала новые</option>
+            <option value="title">По названию (А–Я)</option>
+            <option value="year">Сначала новые</option>
+            <option value="rating">По рейтингу</option>
           </select>
         </p>
         <p class="form-field form-field--inline">
@@ -55,11 +57,13 @@
           <label class="field-label" for="available">Только доступные</label>
         </p>
         <button type="submit">Показать книги</button>
+        <button class="button-secondary" type="button" data-action="reset-filters">Сбросить фильтры</button>
       </form>
     </section>
 
     <section class="book-listing" aria-labelledby="books-heading">
       <h2 class="section-heading" id="books-heading">Книги в каталоге</h2>
+      <p class="results-count" id="results-count" aria-live="polite"></p>
       <article class="book-card">
         <header class="book-card__header">
           <h3 class="book-card__title"><a href="book.html">Тихий сад</a></h3>
@@ -145,6 +149,13 @@
       </article>
     </section>
 
+    <section class="wishlist-panel" id="wishlist" aria-labelledby="wishlist-heading">
+      <h2 class="section-heading" id="wishlist-heading">Мой список <span id="wishlist-section-count">0</span></h2>
+      <ul class="wishlist-list" id="wishlist-list">
+        <li class="wishlist-empty">Пока нет книг в списке. Нажмите «Хочу прочитать» на карточке.</li>
+      </ul>
+    </section>
+
     <aside class="catalog-recommendation" aria-labelledby="recommendation-heading">
       <h2 class="section-heading" id="recommendation-heading">Выбор библиотекаря</h2>
       <p>Начните с <a href="book.html">книги «Тихий сад»</a>, если хочется спокойного и доброго чтения.</p>
@@ -161,5 +172,7 @@
       </ul>
     </nav>
   </footer>
+  <noscript><p>Для поиска и фильтров включите JavaScript.</p></noscript>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

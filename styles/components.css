@@ -4,6 +4,7 @@
 
 .catalog-filters,
 .catalog-recommendation,
+.wishlist-panel,
 .loan-rules,
 .related-books,
 .book-meta-section,
@@ -117,6 +118,18 @@ button:disabled {
   border-color: var(--color-border);
 }
 
+.button-secondary {
+  border-color: var(--color-border);
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+button.button-secondary:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+  color: var(--color-accent);
+}
+
 .button-link:focus-visible,
 button:focus-visible {
   outline-color: var(--color-focus);
@@ -124,7 +137,7 @@ button:focus-visible {
 
 .book-card {
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto auto;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
   align-content: start;
   gap: var(--space-3);
   min-inline-size: 0;
@@ -179,6 +192,85 @@ button:focus-visible {
 
 .book-card__action .button-link {
   inline-size: 100%;
+}
+
+.book-card__action button {
+  inline-size: 100%;
+}
+
+.wishlist-toggle[aria-pressed="true"] {
+  border-color: var(--color-border);
+  background: var(--color-surface-muted);
+  color: var(--color-accent);
+}
+
+.wishlist-toggle {
+  inline-size: 100%;
+}
+
+.wishlist-remove {
+  background: var(--color-surface);
+  color: var(--color-accent);
+}
+
+.results-count,
+.catalog-empty {
+  grid-column: 1 / -1;
+}
+
+.results-count {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.catalog-empty,
+.wishlist-empty {
+  padding: var(--space-4);
+  border: var(--border-width) dashed var(--color-border);
+  border-radius: var(--radius-medium);
+  color: var(--color-text-muted);
+}
+
+.wishlist-panel {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.wishlist-list {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.wishlist-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-small);
+  background: var(--color-surface-muted);
+}
+
+.wishlist-entry__title {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.wishlist-count {
+  display: inline-grid;
+  min-inline-size: var(--control-min-block-size);
+  min-block-size: var(--control-min-block-size);
+  place-items: center;
+  padding-inline: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
 }
 
 .book-meta {
