@@ -76,6 +76,7 @@
     "intro"
     "filters"
     "books"
+    "wishlist"
     "recommendation";
   align-content: start;
   gap: var(--space-5);
@@ -110,6 +111,10 @@
 
 .catalog-recommendation {
   grid-area: recommendation;
+}
+
+.wishlist-panel {
+  grid-area: wishlist;
 }
 
 .review-list,
@@ -181,7 +186,8 @@
       "title title"
       "intro intro"
       "filters books"
-      "recommendation books";
+      "recommendation books"
+      "wishlist books";
     align-items: start;
     gap: var(--space-5) var(--space-6);
   }
