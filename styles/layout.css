@@ -76,8 +76,7 @@
     "intro"
     "filters"
     "books"
-    "wishlist"
-    "recommendation";
+    "wishlist";
   align-content: start;
   gap: var(--space-5);
 }
@@ -186,7 +185,6 @@
       "title title"
       "intro intro"
       "filters books"
-      "recommendation books"
       "wishlist books";
     align-items: start;
     gap: var(--space-5) var(--space-6);

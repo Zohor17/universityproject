@@ -1,0 +1,60 @@
+{
+  "info": {
+    "name": "BookNest — Open Library API",
+    "description": "Примеры поиска, пагинации и получения сведений о произведении.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Поиск книг",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "https://openlibrary.org/search.json?q=the%20lord%20of%20the%20rings&page=1&limit=20&fields=key%2Ctitle%2Cauthor_name%2Cfirst_publish_year%2Ccover_i%2Cedition_count%2Cratings_average",
+          "protocol": "https",
+          "host": ["openlibrary", "org"],
+          "path": ["search.json"],
+          "query": [
+            { "key": "q", "value": "the lord of the rings" },
+            { "key": "page", "value": "1" },
+            { "key": "limit", "value": "20" },
+            { "key": "fields", "value": "key,title,author_name,first_publish_year,cover_i,edition_count,ratings_average" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Поиск — страница 2",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "https://openlibrary.org/search.json?q=the%20lord%20of%20the%20rings&page=2&limit=20&fields=key%2Ctitle%2Cauthor_name%2Cfirst_publish_year%2Ccover_i%2Cedition_count%2Cratings_average",
+          "protocol": "https",
+          "host": ["openlibrary", "org"],
+          "path": ["search.json"],
+          "query": [
+            { "key": "q", "value": "the lord of the rings" },
+            { "key": "page", "value": "2" },
+            { "key": "limit", "value": "20" },
+            { "key": "fields", "value": "key,title,author_name,first_publish_year,cover_i,edition_count,ratings_average" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Сведения о произведении",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": {
+          "raw": "https://openlibrary.org/works/OL45804W.json",
+          "protocol": "https",
+          "host": ["openlibrary", "org"],
+          "path": ["works", "OL45804W.json"]
+        }
+      }
+    }
+  ]
+}

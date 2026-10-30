@@ -30,39 +30,17 @@
       <h2 class="section-heading" id="filters-heading">Найти книгу</h2>
       <form class="filters-form" action="index.html" method="get">
         <p class="form-field">
-          <label class="field-label" for="search">Название, автор или ключевое слово</label>
-          <input class="form-control" id="search" name="q" type="search" maxlength="80">
+          <label class="field-label" for="search">Название книги или имя автора</label>
+          <input class="form-control" id="search" name="q" type="search" minlength="2" maxlength="80" aria-describedby="search-hint">
         </p>
-        <p class="form-field">
-          <label class="field-label" for="genre">Жанр</label>
-          <select class="form-control" id="genre" name="genre">
-            <option value="all">Все жанры</option>
-            <option value="fiction">Художественная литература</option>
-            <option value="detective">Детектив</option>
-            <option value="science">Научная литература</option>
-            <option value="history">История</option>
-            <option value="adventure">Приключения</option>
-          </select>
-        </p>
-        <p class="form-field">
-          <label class="field-label" for="sort">Сортировка</label>
-          <select class="form-control" id="sort" name="sort">
-            <option value="title">По названию (А–Я)</option>
-            <option value="year">Сначала новые</option>
-            <option value="rating">По рейтингу</option>
-          </select>
-        </p>
-        <p class="form-field form-field--inline">
-          <input class="checkbox-input" id="available" name="available" type="checkbox" value="yes">
-          <label class="field-label" for="available">Только доступные</label>
-        </p>
-        <button type="submit">Показать книги</button>
-        <button class="button-secondary" type="button" data-action="reset-filters">Сбросить фильтры</button>
+        <p class="form-help" id="search-hint">Введите минимум два символа. Результаты обновятся после короткой паузы.</p>
+        <button class="button-secondary" type="button" data-action="clear-search">Очистить поиск</button>
       </form>
     </section>
 
     <section class="book-listing" aria-labelledby="books-heading">
-      <h2 class="section-heading" id="books-heading">Книги в каталоге</h2>
+      <h2 class="section-heading" id="books-heading">Каталог Open Library</h2>
+      <p class="api-state" id="api-state" role="status" aria-live="polite">Введите минимум два символа для поиска.</p>
       <p class="results-count" id="results-count" aria-live="polite"></p>
       <article class="book-card">
         <header class="book-card__header">
@@ -156,10 +134,11 @@
       </ul>
     </section>
 
-    <aside class="catalog-recommendation" aria-labelledby="recommendation-heading">
-      <h2 class="section-heading" id="recommendation-heading">Выбор библиотекаря</h2>
-      <p>Начните с <a href="book.html">книги «Тихий сад»</a>, если хочется спокойного и доброго чтения.</p>
-    </aside>
+    <nav class="pagination" id="pagination" aria-label="Страницы результатов" hidden>
+      <button class="button-secondary" type="button" data-action="previous-page">Назад</button>
+      <p class="pagination__status" id="page-status" aria-live="polite"></p>
+      <button class="button-secondary" type="button" data-action="next-page">Вперёд</button>
+    </nav>
   </main>
 
   <footer class="site-footer">
