@@ -1,29 +1,27 @@
 import js from "@eslint/js";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
 
-const browserGlobals = {
-  Array: "readonly",
-  Element: "readonly",
-  Error: "readonly",
-  HTMLInputElement: "readonly",
-  HTMLSelectElement: "readonly",
-  Intl: "readonly",
-  JSON: "readonly",
-  Number: "readonly",
-  Object: "readonly",
-  Set: "readonly",
-  String: "readonly",
-  document: "readonly",
-  localStorage: "readonly",
-};
-
-export default [
+export default tseslint.config(
+  { ignores: ["dist", "node_modules"] },
   js.configs.recommended,
+  ...tseslint.configs.recommended,
   {
-    files: ["**/*.js"],
+    files: ["src/**/*.{ts,tsx}"],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-      globals: browserGlobals,
+      globals: globals.browser,
+    },
+    plugins: {
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+    },
+    rules: {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error",
+      "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+      "@typescript-eslint/no-explicit-any": "error",
     },
   },
-];
+);

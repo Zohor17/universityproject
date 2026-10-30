@@ -1,0 +1,53 @@
+.app-shell {
+  display: flex;
+  min-block-size: var(--page-min-block-size);
+  flex-direction: column;
+}
+
+.book-results {
+  grid-area: books;
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+  min-inline-size: 0;
+}
+
+.book-results > .section-heading,
+.book-results > .results-count,
+.book-results > .api-state,
+.book-results > .catalog-empty,
+.book-results > .pagination {
+  grid-column: 1 / -1;
+}
+
+.book-badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-heading);
+}
+
+.book-badge--accent {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.book-card__action {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.book-card__action button {
+  inline-size: 100%;
+}
+
+.book-detail__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
